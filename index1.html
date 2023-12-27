@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of rock, paper, scissors</title>
+</head>
+<body>
+    
+    <ol>
+        <li><button>rock</button></li>
+        <li><button>paper</button></li>
+        <li><button>scissors</button></li>    
+    </ol>
+    <button>click me
+        <script>
+            function getComputerChoice(items){
+                 return items[Math.floor(Math.random()*items.length)]
+            }
+            var items = ["rock", "paper", "scissors"];
+    
+            let compChoice = getComputerChoice(items);
+    
+            function playerChoice(x){
+                return x;
+            }
+            let aPlayerChoice = playerChoice("rock");
+    
+            function winner(playerChoice, compChoice){
+               if((playerChoice == "rock" && compChoice == "scissors")||
+                 (playerChoice == "scissors" && compChoice == "paper")||
+                 (playerChoice == "paper" && compChoice == "rock")){
+                    return playerChoice + " " + compChoice + " You win";
+                 };
+               if((playerChoice == "scissors" && compChoice == "rock")||
+                  (playerChoice == "paper" && compChoice == "scissors")||
+                  (playerChoice === "rock" && compChoice == "paper")){
+                    return playerChoice + " " + compChoice + " You lose";
+                  }
+               if(playerChoice == compChoice){
+                    return  playerChoice + " " + compChoice + " it's a tie";
+                }             
+                }      
+            console.log (compChoice);
+            console.log (aPlayerChoice);
+            console.log (winner(aPlayerChoice, compChoice));
+        </script>
+    </button>
+</body>
+</html>
