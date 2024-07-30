@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock,paper,scissors</title>
+    <link rel="stylesheet" href="rps.css">
+</head>
+<body>
+    <div id="choices">
+        <div id="item">
+            <button type="btn" value="rock">rock</button>
+        </div>
+        <div id="item">
+            <button type="btn" value="paper">paper</button>
+        </div>
+        <div id="item">
+            <button type="btn" value="scissors">scissors</button>
+        </div>
+    </div>
+    
+    <div id="res">
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        let playerScore = 0;
+        let computerScore = 0;
+
+        const buttons = document.querySelectorAll('button');
+
+
+        function getComputerChoice(){
+            let items = ["rock", "paper", "scissors"];
+                 return items[Math.floor(Math.random()*items.length)];
+        }
+
+        function disableButtons() {
+            buttons.forEach(elem => {
+                elem.disabled = true;
+            })
+        }
+
+        
+        function gameRound(playerChoice){
+
+            let compChoice = getComputerChoice();
+            let result = " ";
+
+               if((playerChoice == "rock" && compChoice == "scissors")||
+                 (playerChoice == "scissors" && compChoice == "paper")||
+                 (playerChoice == "paper" && compChoice == "rock")){
+                    result =  ("You chose : " + playerChoice + " , Computer choice " + compChoice + " , You win");
+                 };
+               if((playerChoice == "scissors" && compChoice == "rock")||
+                  (playerChoice == "paper" && compChoice == "scissors")||
+                  (playerChoice === "rock" && compChoice == "paper")){
+                    result = ("You chose : " + playerChoice + " , Computer choice " + compChoice + " , You lose");
+                  }
+               if(playerChoice == compChoice){
+                    result =  ("You chose : " + playerChoice + " , Computer choice " + compChoice + " , it's a tie");
+                }  
+                document.getElementById('result').innerHTML =  result;
+                return result
+            } 
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function(){
+                    gameRound(btn.value)
+                })
+            })     
+    </script>
+</body>
+</html>

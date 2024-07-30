@@ -1,0 +1,38 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+}
+
+body{
+    background-color: rgb(221, 116, 55);
+}
+
+
+#choices{
+    display: flex;
+    position: relative;
+    margin-left: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 10%;
+    justify-content: center;   
+}
+#item{
+    margin: 60px;
+    
+}
+button{
+    background-color: rgb(238, 165, 106);
+    width: 100px;
+    height: 100px;
+}
+#result{
+    text-align: center;
+    margin: auto;
+    background-color: rgb(250, 120, 103);
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px, solid, black;
+}
